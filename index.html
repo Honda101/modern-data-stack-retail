@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dustin Meyer - Data Analyst Portfolio</title>
+    <style>
+        /* --- CORE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f4f4f4; }
+        
+        header {
+            position: relative;
+            background-image: url('images/portfolio_header_viz_clean.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        header h1, header p { color: #ffffff; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); position: relative; z-index: 2; }
+        header p { font-size: 1.25rem; font-weight: 600; }
+
+        nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: #667eea; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: #764ba2; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+        section { background: white; margin: 2rem 0; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { color: #667eea; margin-bottom: 1.5rem; font-size: 2rem; border-bottom: 3px solid #667eea; padding-bottom: 0.5rem; }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 { color: #764ba2; margin-bottom: 1rem; }
+        .skill-category ul { list-style: none; }
+        .skill-category li { padding: 0.4rem 0; color: #555; }
+        .skill-category li:before { content: "▸ "; color: #667eea; font-weight: bold; }
+
+        /* --- CASE STUDY STYLING --- */
+        .project-showcase { display: grid; grid-template-columns: 1fr; gap: 4rem; margin-top: 2rem; }
+        .case-study-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 1.5rem;
+            transition: 0.3s;
+        }
+        .case-study-card:hover { box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15); }
+        .case-study-image img { width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; }
+        .case-study-content h3 { color: #764ba2; font-size: 1.5rem; margin-bottom: 1rem; }
+        .details-box { background: #f8f9fa; padding: 1rem; border-radius: 8px; font-size: 0.95rem; border-left: 4px solid #667eea; margin-top: 1rem; }
+        .tag { background: #667eea; color: white; padding: 0.2rem 0.6rem; border-radius: 15px; font-size: 0.8rem; margin-right: 5px; }
+
+        /* --- CONTACT SECTION --- */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .contact-item { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid #eee; transition: 0.3s; }
+        .contact-item:hover { border-color: #667eea; transform: translateY(-3px); }
+        .contact-item h3 { color: #667eea; margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .contact-item a { color: #764ba2; text-decoration: none; font-weight: 600; word-break: break-all; }
+
+        @media (max-width: 900px) { .case-study-card { grid-template-columns: 1fr; } }
+        
+        footer { background: #333; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dustin Meyer</h1>
+        <p>Sr. Data Analyst | Turning Data into Actionable Insights</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Senior analytics and data management professional with 7+ years of experience delivering data-driven strategy, enterprise reporting frameworks, and modern data platform solutions. Skilled in research-driven analysis, data architecture, data governance, and thought leadership. Adept at transforming complex technical and market trends into clear, actionable insights for executives and clients. Known for strong storytelling, excellent communication, and the ability to synthesize emerging technologies such as AI/GenAI, data lakehouses, and modern data stack into pragmatic guidance.
+
+                I specialize in building interactive dashboards, automating data pipelines, and creating predictive models that help organizations make data-driven decisions with confidence.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & SQL</h3>
+                    <ul>
+                        <li>Python (Pandas, SQLAlchemy)</li>
+                        <li>Snowflake SQL</li>
+                        <li>ETL Pipeline Automation</li>
+                        <li>API Data Ingestion</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Visualization</h3>
+                    <ul>
+                        <li>Looker Studio</li>
+                        <li>Tableau Public</li>
+                        <li>Power BI</li>
+                        <li>Data Storytelling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Engineering</h3>
+                    <ul>
+                        <li>Snowflake Data Cloud</li>
+                        <li>Cloud Data Warehousing</li>
+                        <li>Data Modeling (Star Schema)</li>
+                        <li>Version Control (Git/GitHub)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Business Intelligence</h3>
+                    <ul>
+                        <li>KPI Development</li>
+                        <li>ROI Analysis</li>
+                        <li>Stakeholder Reporting</li>
+                        <li>Predictive Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-showcase">
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <a href="https://public.tableau.com/views/USOilHeatmaps/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" style="text-decoration: none;">
+                            <div class="image-container">
+                                <img src="images/Oil_Dashbaord_Tall_Final.png" alt="Oil Production Dashboard">
+                                <div class="hover-overlay">View Live Dashboard ↗</div>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="case-study-content">
+                        <h3>US Oil Production Analysis</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Tableau</span>
+                        </div>
+                        
+                        <p>A case study on beautiful dashboard design while proving great detail at a glance.</p>
+                        
+                        <div class="details-box">
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Engineered an end-to-end analytics pipeline by extracting and cleaning 20 years of historical production data from [Website Name/Industry Source] to visualize long-term output trends across the global energy sector.</span>
+                                </li>
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Developed a multi-tier comparative framework that segments performance by "Global Giants," "Large US Public," and "Private US" firms, allowing stakeholders to benchmark production volatility across different corporate structures.</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Designed a high-impact monthly production heatmap to identify seasonal output patterns and historical anomalies, utilizing advanced UI/UX principles in Tableau to maintain clarity across dense, multi-company datasets.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <a href="https://public.tableau.com/views/RVOHealth_TestViz/UserProfile?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" style="text-decoration: none;">
+                            <div class="image-container">
+                                <img src="images/Website_Traffic_Dashboard_Final.png" alt="Oil Production Dashboard">
+                                <div class="hover-overlay">View Live Dashboard ↗</div>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="case-study-content">
+                        <h3>Website Traffic Analysis</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Tableau</span>
+                        </div>
+                        
+                        <p>Turning complex datasets into visually stunning, actionable insights that drive business growth.</p>
+                        
+                        <div class="details-box">
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Analyzed multi-channel acquisition patterns to identify high-converting traffic sources, providing actionable insights into user behavior and navigation paths.</span>
+                                </li>
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Engineered a retention-focused reporting suite to track return customer rates, utilizing cohort analysis to pinpoint the primary drivers of repeat site visits.</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Developed interactive KPIs for session duration and bounce rates, allowing stakeholders to visualize the direct correlation between content engagement and user loyalty.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <a href="https://lookerstudio.google.com/reporting/9e326c6b-b877-43ae-b1d5-f33d3c5820e8" target="_blank" style="text-decoration: none;">
+                            <div class="image-container">
+                                <img src="images/Subscription_Dashboard_Final.png" alt="Oil Production Dashboard">
+                                <div class="hover-overlay">View Live Dashboard ↗</div>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="case-study-content">
+                        <h3>Automated Subscription Intelligence Platform</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="tag">Python</span>
+                            <span class="tag">Snowflake</span>
+                            <span class="tag">Looker</span>
+                        </div>
+                        
+                        <p>Architected a scalable data pipeline to transform raw subscription logs into real-time executive insights for recurring revenue growth.</p>
+                        
+                        <div class="details-box">
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Engineered an automated ETL pipeline using Python and Snowflake to ingest, clean, and model high-volume subscription data, reducing manual reporting overhead by 100%.</span>
+                                </li>
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Developed a centralized Looker Semantic Layer to define standardized business logic for Monthly Recurring Revenue (MRR), churn rates, and customer lifetime value (LTV).</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Created dynamic executive dashboards that identify high-risk churn segments and expansion opportunities, enabling data-driven retention strategies across the organization.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <a href="https://public.tableau.com/views/HooniganTransformationOfficeLiquidityModel-POC/HooniganGroup?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" style="text-decoration: none;">
+                            <div class="image-container">
+                                <img src="images/Hoonigan_Dashboard_Final.png" alt="Oil Production Dashboard">
+                                <div class="hover-overlay">View Live Dashboard ↗</div>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="case-study-content">
+                        <h3>Integrated Commerce & Operations Intelligence Hub</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Tableau</span>
+                        </div>
+                        
+                        <p>Optimizing the intersection of high-growth e-commerce sales and large-scale inventory logistics to drive enterprise-wide operational efficiency.</p>
+                        
+                        <div class="details-box">
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Synthesized dual-stream data architectures to provide a unified view of Hoonigan’s front-end retail performance alongside Wheel Pros’ backend inventory levels.</span>
+                                </li>
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Engineered an Efficiency vs. Growth analytical model that correlates real-time SKU velocity with stock-on-hand, identifying optimal reorder points to prevent stockouts during peak promotional cycles.</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Developed a cross-functional executive suite that visualizes fulfillment bottlenecks and warehouse turnaround times, directly impacting bottom-line profitability through reduced overhead.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <div class="image-container-static">
+                            <img src="images/Superstore_Business_Dashboard_PBI_Final.png" alt="Power BI Sales Analysis">
+                            </div>
+                    </div>
+                
+                    <div class="case-study-content">
+                        <h3>Sales Performance Analytics</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        
+                        <p>A comprehensive Power BI suite developed to track regional sales quotas and year-over-year growth metrics.</p>
+                        
+                        <div class="details-box">
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Analyzed historical sales data to identify seasonal trends and underperforming territories.</span>
+                                </li>
+                                <li style="margin-bottom: 10px; display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Developed custom DAX measures for Rolling 12-Month Revenue and Variance to Budget.</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start;">
+                                    <span style="color: #667eea; margin-right: 12px; font-weight: bold;">•</span>
+                                    <span>Delivered automated weekly snapshots to sales leadership, replacing manual Excel trackers.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:dustin.meyer101@gmail.com">dustin.meyer101@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>💼 LinkedIn</h3>
+                    <a href="https://linkedin.com/in/dustinmeyer" target="_blank">View Profile</a>
+                </div>
+                <div class="contact-item">
+                    <h3>💻 GitHub</h3>
+                    <a href="https://github.com/Honda101" target="_blank">View Code</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" style="margin-top: 5rem; border-top: 2px solid #667eea; padding-top: 3rem;">
+            <h2 style="color: #667eea; margin-bottom: 2rem;">Education</h2>
+            
+            <div class="education-container" style="display: flex; flex-direction: column; gap: 2rem;">
+                
+                <div style="border-left: 4px solid #764ba2; padding-left: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                        <h3 style="margin: 0; color: #333;">Master of Business Administration (MBA)</h3>
+                        <span style="color: #667eea; font-weight: bold;">Expected Dec 2027</span>
+                    </div>
+                    <p style="margin: 5px 0; font-weight: 600; color: #555;">Colorado State University</p>
+                    <p style="color: #666; font-style: italic;">Emphasis in Business Intelligence & Data Analytics</p>
+                </div>
+        
+                <div style="border-left: 4px solid #ddd; padding-left: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                        <h3 style="margin: 0; color: #333; font-size: 1.1rem;">Bachelor of Science in Business</h3>
+                        <span style="color: #999;">Graduated 2016</span>
+                    </div>
+                    <p style="margin: 5px 0; font-weight: 600; color: #555;">University of Northern Colorado</p>
+                </div>
+        
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Dustin Meyer. Built with passion for data.</p>
+    </footer>
+</body>
+</html>
