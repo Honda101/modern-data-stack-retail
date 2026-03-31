@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: tpch_sample
+    description: "Standard TPC-H retail dataset provided by Snowflake for performance testing."
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1
+    tables:
+      - name: orders
+        description: "Raw order transactions."
+      - name: lineitem
+        description: "Individual items within each order."
+      - name: customer
+        description: "Customer profile information."
