@@ -9,6 +9,8 @@ I architected an end-to-end **ELT Pipeline** using the **Medallion Architecture*
 * **Intermediate Layer (`int_`):** This is where the heavy lifting happens. I joined orders and customers to calculate LTV and Average Order Value. By doing this here, I ensure the math is only calculated once, saving Snowflake compute costs.
 * **Marts Layer (`fct_`):** The final output. This table is "Wide and Flat," meaning it’s ready to be plugged into Tableau or Power BI without needing any further joins or complex formulas.
 
+* ![Project Data Lineage](./modern-data-stack-retail-data-lineage-graph.png)
+
 ## 🛡️ Data Quality & Governance
 * **Automated Testing:** Deployed `unique` and `not_null` schema tests to ensure 100% integrity of primary keys.
 * **Documentation:** Leveraged dbt's native documentation engine to create a searchable data dictionary.
