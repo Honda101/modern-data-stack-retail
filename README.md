@@ -19,4 +19,8 @@ I architected an end-to-end **ELT Pipeline** using the **Medallion Architecture*
 ## 🚀 Key Achievements
 * Successfully transitioned "Example" boilerplate into a production-ready custom schema.
 * Optimized Snowflake performance by materializing intermediate and mart layers as **Tables** rather than views.
+<<<<<<< HEAD
 * Developed a scalable framework that can handle millions of rows of transaction data.
+=======
+* Developed a scalable framework that can handle millions of rows of transaction data.
+>>>>>>> 6a4184924f16dbe34e57df3265bbdafeeecbb519
